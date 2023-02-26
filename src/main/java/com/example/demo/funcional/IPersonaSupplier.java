@@ -1,5 +1,7 @@
 package com.example.demo.funcional;
 
-public interface IPersonaSupplier {
-
+@FunctionalInterface
+//Supplier no recibe argumento pero retorna algun especifico
+public interface IPersonaSupplier<T> {
+	public T getNombre ();
 }

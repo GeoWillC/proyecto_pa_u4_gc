@@ -18,5 +18,6 @@ public class ProyectoPaU4GcApplication implements CommandLineRunner{
 //		() -> {
 //			System.out.println("Hola mundo");
 //		}
+		System.out.println("Hola");
 	}
 }
