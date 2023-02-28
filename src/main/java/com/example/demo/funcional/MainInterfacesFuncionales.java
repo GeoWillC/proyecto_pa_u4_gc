@@ -51,6 +51,7 @@ public class MainInterfacesFuncionales {
 			Integer valorFinal=numeroLista+1;
 			return valorFinal;
 		});
-		listaCadena2.forEach(numero->LOG.info("Integer function: "+numero));	
+		listaCadena2.forEach(numero->LOG.info("Integer function: "+numero));
+
 	}
 }

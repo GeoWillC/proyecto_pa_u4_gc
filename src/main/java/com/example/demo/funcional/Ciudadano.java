@@ -1,24 +1,59 @@
 package com.example.demo.funcional;
 
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="ciudadano_p")
 public class Ciudadano {
-	private String nombreCompleto;
-	private String ciudad;
-	public String getNombreCompleto() {
-		return nombreCompleto;
+	@Id
+	@GeneratedValue(generator="seq_ciud",strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name="seq_ciud",sequenceName="seq_ciud", allocationSize=1)
+	@Column(name="ciud_id")
+	private Integer id;
+	@Column(name="ciud_nombre")
+	private String nombre;
+	@Column(name="ciud_apellido")
+	private String apellido;
+	@Column(name="ciud_fecha_nacimiento")
+	private LocalDateTime ciudadanoFechaNacimiento;
+	public Integer getId() {
+		return id;
 	}
-	public void setNombreCompleto(String nombreCompleto) {
-		this.nombreCompleto = nombreCompleto;
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public String getCiudad() {
-		return ciudad;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getApellido() {
+		return apellido;
+	}
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	public LocalDateTime getCiudadanoFechaNacimiento() {
+		return ciudadanoFechaNacimiento;
+	}
+	public void setCiudadanoFechaNacimiento(LocalDateTime ciudadanoFechaNacimiento) {
+		this.ciudadanoFechaNacimiento = ciudadanoFechaNacimiento;
 	}
 	@Override
 	public String toString() {
-		return "Ciudadano [nombreCompleto=" + nombreCompleto + ", ciudad=" + ciudad + "]";
+		return "Ciudadano [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", ciudadanoFechaNacimiento="
+				+ ciudadanoFechaNacimiento + "]";
 	}
-	
 
+	
+	
 }
